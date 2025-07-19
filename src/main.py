@@ -45,7 +45,7 @@ def main() -> None:
                 elif isinstance(action, EscapeAction):
                     raise SystemExit()
 
-
+# a change
 
 if __name__ == "__main__":
     main()
