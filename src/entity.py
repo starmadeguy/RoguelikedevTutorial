@@ -1,4 +1,4 @@
-from typing import Tuple
+from typing import Tuple, List
 
 
 class Entity:
@@ -15,3 +15,15 @@ class Entity:
         # Move the entity by a given amount
         self.x += dx
         self.y += dy
+
+class InteractableEntity(Entity):
+    def __init__(self, x: int, y: int, char: str, color: Tuple[int, int, int], function):
+        super().__init__(x, y, char, color)
+        self.function = function
+
+    def execute (self, args: List):
+        self.function(args)
+
+class Lever(InteractableEntity):
+    def __init__(self, x: int, y: int, char: str, color: Tuple[int, int, int], function):
+        super().__init__(x, y, char, color, function)
